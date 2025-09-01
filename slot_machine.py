@@ -12,23 +12,36 @@ ROWS = 3
 COLS = 3
 
 SYMBOL_DICT = {
-	# The lower the number, the higher the multiplier of score
+	# Chances of occurence
 	"A": 2, 
-	"B": 3,
-	"C": 4,
-	"D": 5
+	"B": 4,
+	"C": 6,
+	"D": 8,
+	"E": 10
+}
+
+SYMBOL_VALUE = {
+	# The lower the number, the higher the multiplier of score
+	"A": 10, 
+	"B": 8,
+	"C": 6,
+	"D": 4,
+	"E": 2
 }
 
 
 def check_winnings(row):
 	line_won = 0
+	winnings = 0
 	for each_row in row:
 		if len(set(each_row)) == 1:
 			line_won += 1
+			winnings += 1
 		else:
 			continue
 
 	if line_won == 0:
+		print(line_won * winnings)
 		print("The odds are not in your favor. Try again!")
 	else:
 		print(f"Congratulations! You won {line_won} line(s)! ")
@@ -106,6 +119,8 @@ def get_bet():
 
 
 def main():
+	print("IT'S SCATTER TIME!!!")
+	print("====================")
 	balance = deposit()
 	lines = get_number_of_lines()
 	
