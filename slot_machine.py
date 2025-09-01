@@ -20,23 +20,20 @@ SYMBOL_DICT = {
 }
 
 
-def check_winnings():
-	pass
-
-
-def check_pattern(row):
+def check_winnings(row):
 	line_won = 0
 	for each_row in row:
 		if len(set(each_row)) == 1:
 			line_won += 1
 		else:
 			continue
-	
+
 	if line_won == 0:
 		print("The odds are not in your favor. Try again!")
 	else:
 		print(f"Congratulations! You won {line_won} line(s)! ")
-	
+
+
 
 def get_slot_machine_spin(rows, cols, symbols):
 	# create a list that contains the all different values we could select from our dictionary
@@ -143,7 +140,7 @@ def main():
 			continue
 
 	# Check winnings
-	check_pattern(slots)
+	check_winnings(slots)
 	
 
 	
