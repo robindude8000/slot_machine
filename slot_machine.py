@@ -108,9 +108,9 @@ def get_bet():
 
 
 def main():
-	# balance = deposit()
+	balance = deposit()
 	lines = get_number_of_lines()
-	'''
+	
 	# Validate the balance
 	while True:
 		bet = get_bet()
@@ -120,7 +120,7 @@ def main():
 			print(f"Not enough balance to bet that amount. Your current balance is ${balance}.")
 		else:	
 			print(f"You are betting ${bet} on {lines} line(s). Total bet is equal to: ${total_bet}! Goodluck!")
-			break'''
+			break
 	
 	# Roll the slot machine
 	while True:	
